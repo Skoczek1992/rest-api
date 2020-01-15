@@ -44,8 +44,10 @@ class OrderTicketForm extends React.Component {
     e.preventDefault();
 
     if(order.client && order.email && order.day && order.seat) {
+      await new Promise(resolve => setTimeout(resolve, 2000));
+
       addSeat(order);
-      this.setState({ 
+      this.setState({
         order: {
           client: '',
           email: '',
@@ -98,9 +100,9 @@ class OrderTicketForm extends React.Component {
             <Button color="primary" className="mt-3">Submit</Button>
           </Col>
           <Col xs="12" md="6">
-            <SeatChooser 
+            <SeatChooser
               chosenDay={order.day}
-              chosenSeat={order.seat} 
+              chosenSeat={order.seat}
               updateSeat={updateSeat} />
           </Col>
         </Row>
