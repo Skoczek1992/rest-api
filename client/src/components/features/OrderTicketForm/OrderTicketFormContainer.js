@@ -10,3 +10,7 @@ const mapDispatchToProps = dispatch => ({
   addSeat: (seat) => dispatch(addSeatRequest(seat)),
   updateAllSeats: (seat) => dispatch(loadSeats(seat)),
 });
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(OrderTicketForm)
+///seats i OrderTicketForm
